@@ -136,14 +136,6 @@
     <div class="note" data-page-node-id="ShunGKPFSyzmMX759vT4AY">🟡 数据取 BNC 业务分部级（年报 P29-P30 销售费用拆分）。年报口径为「销售及分销成本（广告及营销除外）」占 24.8 元，包含母婴渠道返点 / 终端导购提成、物流、销售团队等，并非纯导购佣金；这是婴配粉部门最主要的营销投放方式，品牌广告仅占 15.0 元。</div>
   </div>
 
-  <!-- 同价位段零售价 -->
-  <div class="section" data-page-node-id="pzxO50PPTKjmZBTTN40tpP">
-    <h2 data-page-node-id="MMTbgPaAOlsVNNAYNexxVm">同价位段 · 1 段（900g）零售到手价</h2>
-    <div class="desc" data-page-node-id="AJecPa3QdyLGAyo6WhEosF">出厂价之外，消费者在电商实际付的终端价（2026-09 京东活动到手价）。</div>
-    <div id="chartPrice" class="chart-box" data-page-node-id="wXYsrUef4UAiPNpNHtxa22"></div>
-    <div class="note" data-page-node-id="QnQUuSxCgGjbGiCb1maLnB">数据：京东在售活动到手价（慢慢买 / 什么值得买比价口径）。派星 ¥318-328、美赞臣蓝臻 ¥299、海普诺凯荷致 ¥315-348。可贝思为羊奶粉 700g 规格，未计入此栏。</div>
-  </div>
-
   <!-- 口径与风险 -->
   <div class="risk" data-page-node-id="BHUs6tkSojEaticeIuF5XL">
     <h2 data-page-node-id="m8c9DHlgSmPCQW5TToBgW6">⚠️ 口径与降级提示（务必看）</h2>
@@ -291,25 +283,7 @@ var Fr={},Gr={};var Wr,Hr=function(){function t(t,e,n){var i=this;this._sleepAft
   };
   c2.setOption(salesOpt);
 
-  var c3 = echarts.init(document.getElementById('chartPrice'));
-  var priceOpt = {
-    tooltip: { trigger:'axis', axisPointer:{type:'shadow'}, formatter:'{b}<br/>1段900g 到手价: ¥{c}' },
-    grid: { left: 100, right: 36, top: 20, bottom: 30 },
-    xAxis: { type:'value', axisLabel:{formatter:'¥{value}'} },
-    yAxis: { type:'category', data:['美赞臣蓝臻','合生元派星','海普诺凯荷致'] },
-    series: [{
-      name:'零售到手价', type:'bar', barWidth:'52%',
-      data:[
-        { value:299, itemStyle:{color:'#2d4a8a'} },
-        { value:323, itemStyle:{color:'#E8543F'} },
-        { value:332, itemStyle:{color:'#9B59B6'} }
-      ],
-      label:{ show:true, position:'right', formatter:'¥{c}', fontWeight:700 }
-    }]
-  };
-  c3.setOption(priceOpt);
-
-  window.addEventListener('resize', function(){ c1.resize(); cP.resize(); c2.resize(); c3.resize(); });
+  window.addEventListener('resize', function(){ c1.resize(); cP.resize(); c2.resize(); });
 })();
 </script>
 </body>
