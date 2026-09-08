@@ -68,10 +68,27 @@
     📌 <b data-page-node-id="6IsCYKANWD0C9TT9aW6jjy">本页口径</b>：从 H&H 集团整体财报中，单独拆出「<b data-page-node-id="pEatMdAbZd6znAJto0vueU">婴幼儿配方奶粉</b>」产品分部（即合生元婴配粉业务部门），<b data-page-node-id="CxtAWADbVnOx5ZH8kRGgI0">不含 Swisse / 宠物等其它业务</b>。所有数字为<b data-page-node-id="zZK6DdN1g4ZfJHq07f4bz1">出厂口径</b>（工厂卖给经销商的收入），不含母婴店终端加价。
   </div>
 
+  <!-- 集团总览（总） -->
+  <div class="section" data-page-node-id="grpSec">
+    <h2 data-page-node-id="grpH">集团总览：H&H 一年做多大</h2>
+    <div class="desc" data-page-node-id="grpD">先看清整个集团的盘子，再单拆「婴幼儿配方奶粉」部门。数字来自 H&H 2025 合并利润表 + 产品分部表（港交所披露易·安永审计）。</div>
+    <div class="cards" data-page-node-id="grpCards">
+      <div class="card" data-page-node-id="grpC1"><div class="v" data-page-node-id="grpV1">143.54 亿</div><div class="k" data-page-node-id="grpK1">集团总营收（2025）<span class="tag g" data-page-node-id="grpT1">🟢集团级</span></div></div>
+      <div class="card g" data-page-node-id="grpC2"><div class="v" data-page-node-id="grpV2">+10.0%</div><div class="k" data-page-node-id="grpK2">营收同比（2024 为 130.52 亿）</div></div>
+      <div class="card r" data-page-node-id="grpC3"><div class="v" data-page-node-id="grpV3">29.4%</div><div class="k" data-page-node-id="grpK3">婴配粉占集团总营收比重<span class="tag g" data-page-node-id="grpT3">🟢分部级</span></div></div>
+      <div class="card o" data-page-node-id="grpC4"><div class="v" data-page-node-id="grpV4">1.4%</div><div class="k" data-page-node-id="grpK4">集团净利率（被财务费用 / 税务拨备压低）</div></div>
+    </div>
+    <div id="chartGroup" class="chart-box tall" data-page-node-id="grpChart"></div>
+    <div class="note" data-page-node-id="grpN">🟢 五大产品分部收入（年报 P11-P12，单位亿元）：成人营养 ANC·Swisse 69.46（48.4%）、婴幼儿配方奶粉 42.16（29.4%）、宠物 PNC 21.50（15.0%）、益生菌及儿童营养 8.37（5.8%）、其他婴幼儿产品 2.04（1.4%）。婴配粉是集团第二大产品分部，且占 BNC 婴幼儿业务 80.2%。</div>
+    <div class="callout" data-page-node-id="grpCall">
+      <b>总 → 分：</b>集团 143.54 亿里，婴配粉部门占 <b>42.16 亿（29.4%）</b>。接下来这一章，单拆这门生意——看一罐合生元奶粉的出厂价 100 元，成本、营销、利润各占多少。
+    </div>
+  </div>
+
   <!-- 部门规模 + 产品矩阵 -->
   <div class="section" data-page-node-id="TlOkblJEliYNAsEBWoMnvg">
     <h2 data-page-node-id="wSuMP2YJtlN17E9UoFImze">这是一门多大的生意</h2>
-    <div class="desc" data-page-node-id="kD6FCdmDAO6ndA1hkenvvt">合生元婴配粉是一个「产品部门」，不是单一产品。财报按产品分部单独披露了该部门规模。</div>
+    <div class="desc" data-page-node-id="kD6FCdmDAO6ndA1hkenvvt">（总 → 分：上面已看清集团盘子，这里单拆「婴幼儿配方奶粉」产品部门）合生元婴配粉是一个「产品部门」，不是单一产品。财报按产品分部单独披露了该部门规模。</div>
     <div class="cards" data-page-node-id="CbCjYDPUOHbXkc37OFXooU">
       <div class="card" data-page-node-id="rD23W0rTDuRfxLaHFFWqTs"><div class="v" data-page-node-id="PO4c91vldKPxxHpwqv8nTe">42.16 亿</div><div class="k" data-page-node-id="vizou6DvlYC1bCf7WAVaqB">婴配粉分部营收（2025）<span class="tag g" data-page-node-id="UuvkItRcMvJ7yjNFdExNA4">🟢分部级</span></div></div>
       <div class="card g" data-page-node-id="APJ4pYhx8N8Q7jVKczEUFx"><div class="v" data-page-node-id="R4YuA4ympiElITy19IaoMm">55.11%</div><div class="k" data-page-node-id="CCual43d8ivUxfvqi8Ms04">婴配粉分部毛利率<span class="tag g" data-page-node-id="7MEuZIZKY1gq6MDXsoFSyt">🟢分部级</span></div></div>
@@ -283,7 +300,28 @@ var Fr={},Gr={};var Wr,Hr=function(){function t(t,e,n){var i=this;this._sleepAft
   };
   c2.setOption(salesOpt);
 
-  window.addEventListener('resize', function(){ c1.resize(); cP.resize(); c2.resize(); });
+  var cG = echarts.init(document.getElementById('chartGroup'));
+  var groupOpt = {
+    tooltip: { trigger:'axis', axisPointer:{type:'shadow'},
+      formatter: function(ps){ var p=ps[0]; return p.name+'<br/>收入: '+p.value+' 亿元 ('+(p.value/143.54*100).toFixed(1)+'% of 集团)'; } },
+    grid: { left: 158, right: 62, top: 18, bottom: 30 },
+    xAxis: { type:'value', axisLabel:{formatter:'{value} 亿'}, name:'亿元', nameLocation:'middle', nameGap:28, nameTextStyle:{fontSize:12,color:'#666'} },
+    yAxis: { type:'category', data:['成人营养 ANC·Swisse','婴幼儿配方奶粉','宠物 PNC','益生菌及儿童营养','其他婴幼儿产品'] },
+    series: [{
+      name:'产品分部收入', type:'bar', barWidth:'58%',
+      data:[
+        { value:69.46, itemStyle:{color:'#9B59B6'} },
+        { value:42.16, itemStyle:{color:'#E8543F'} },
+        { value:21.50, itemStyle:{color:'#2ECC71'} },
+        { value:8.37,  itemStyle:{color:'#4A90D9'} },
+        { value:2.04,  itemStyle:{color:'#b0b7c0'} }
+      ],
+      label:{ show:true, position:'right', formatter: function(p){ return p.value+' 亿'; }, fontWeight:700, color:'#333' }
+    }]
+  };
+  cG.setOption(groupOpt);
+
+  window.addEventListener('resize', function(){ c1.resize(); cP.resize(); c2.resize(); cG.resize(); });
 })();
 </script>
 </body>
